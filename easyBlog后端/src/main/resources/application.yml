@@ -1,0 +1,26 @@
+server:
+  port: 8126
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_easyblog?useSSL=FALSE&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+
+coverImagesFilePath: E://IdeaProject/easyBlog/src/main/resources/images/cover/
+contentImagesFilePath: E://IdeaProject/easyBlog/src/main/resources/images/content/
+avatarImagesFilePath: E://IdeaProject/easyBlog/src/main/resources/images/avatar/

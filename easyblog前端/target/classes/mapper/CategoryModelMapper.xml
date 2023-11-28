@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yaol.easyblog.mapper.CategoryModelMapper">
+    <resultMap id="BaseResultMap" type="cn.yaol.easyblog.entity.CategoryModel">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="categoryId" column="category_id" jdbcType="INTEGER"/>
+        <result property="modelId" column="model_id" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="modelSort" column="model_sort" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,categoryId,modelId,content,
+        modelSort
+    </sql>
+    <select id="selectByModelId" resultType="cn.yaol.easyblog.entity.CategoryModel">
+        SELECT * FROM category_model WHERE model_id = #{id}
+    </select>
+</mapper>
